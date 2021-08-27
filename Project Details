@@ -1,0 +1,93 @@
+Following are questions:
+A.	For an eCommerce portal, your design should provide features of checking stock, product listing, order products, add product to cart and order tracking services.
+	Goal:
+1.	Implement a ProductInventoryService, Product inventory service would keep stock of all the products.
+Sample Interface:
+
+Public interface ProductInventoryService {
+	public void addStock(ProductType product, int quantity);
+	public void reduceStock(ProductType product, int quantity);
+       …….you can add some more methods/behaviours.
+}
+
+2.	Implement ProductService, which should have functionality of creating product, deleting, and get details of a products. Define entities like product, product type or category.
+Product entity can have detail like product name, description, and category.
+3.	Implement OrderService, which should provide order service of any product, User should be able to see and order it. Define entities like order detail.
+4.	Once order is placed then product quantity should be reduced.
+5.	Implement PaymentService once order is placed then use payment service for processing payment using payment gateway.
+6.	Implement CartService for adding product to the cart. Define entities like CartDetail.
+7.	Implement UserService for the portal, there could be different type of user like customer, seller, and admin user. Define entities like user, user type, address etc.
+8.	Implement AuthenticationService for the authentication of user in the portal.
+9.	Implement OrderTrackingService, for tracking orders like order is shipped, delivered or returned.
+
+Note:
+Do not limit yourself if you want to add more services and entities.
+
+
+
+
+
+
+
+B.	For a cricket scoring application your design should provide feature of scoring runs, team building, match service like matches between teams, player service for player adding to the teams and so on.
+	Goals:
+Sample Interface:
+
+public interface ScoringService {
+	public void score(Team team, int runs);
+	public void downWicket(Team team, int wicket);
+	public Score getScore(Team team);
+…….you can add some more methods/behaviours.
+}
+
+1.	Implement TeamService, for Team operations like add team to the system. Define related entities like Team.
+Team can have details like team name, players associated.
+2.	Implement PlayerService, for adding players to the team. Define related entities like player.
+3.	Implement UserService for website which could have types like scorer, website admin and tournament admin. 
+4.	Implement Tournament service for website having tournament with functionality of making groups of team.
+5.	Implement MatchService, for defining matches between teams.
+6.	When scoring using scoring services, then runs or balls or wickets should be calculated to the specific teams while a match is going on.
+7.	When score method is called with 0, 1, 2, 3, 4 or 6 run then a ball should be added to score.
+8.	At a time min 0 or max 6 runs should be scored (Runs in negative should not be allowed)
+scoringService.score(Team team, int runs)
+
+9.	When wicket is down then wicket count should be added, for the team
+10.	Only max 10 wickets can be down per team.
+11.	At a time only one wicket can be down.
+12.	scoringService.downWicket(Team team, int wicket)
+
+13.	Get total score of a team, it should return a Score object which would have total runs, overs, wickets, no. of dot balls,no. of 4s and no. of 6s.
+14.	scoringService.getScore(Team team)
+
+Note:
+Do not consider wide ball, no ball, dead ball and run out.
+Do not limit yourself if you want to add more services and entities.
+
+
+
+
+
+
+
+
+C.	For a movie ticket booking system, your design should provide features of ticket booking, show adding per day, validate limit for tickets per show, user services for different types of users, collection services should give data of all show collection average collection by show and so on.
+	Goal:
+1.	Implement a TicketBookingService, It should book tickets by show (No advance booking only same day booking).
+Sample Interface:
+
+public interface TicketBookingService {
+	public boolean bookTicket(TicketDetail ticketDetail);
+	…….you can add some more methods/behaviours.
+}
+
+2.	Implement a ShowService should say number of shows on same day for example 5 shows. Define related entities like ShowDetail.
+3.	Per show there is a minimum limit of 10 and maximum limit of 30 tickets. 
+4.	Every show should have price of it.
+5.	Once minimum or maximum limit of tickets for show is reached then show can be completed.
+6.	Implement UserService for website which could have types like customer, website admin. 
+7.	Implement a CollectionService, which should have methods like collection by show, all shows collection and average collection by show.
+
+Note:
+Do not limit yourself if you want to add more services and entities.
+
+
